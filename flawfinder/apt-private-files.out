@@ -1,0 +1,121 @@
+Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining apt-private/acqprogress.cc
+Examining apt-private/private-cachefile.cc
+Examining apt-private/private-cacheset.cc
+Examining apt-private/private-cmndline.cc
+Examining apt-private/private-depends.cc
+Examining apt-private/private-download.cc
+Examining apt-private/private-install.cc
+Examining apt-private/private-list.cc
+Examining apt-private/private-main.cc
+Examining apt-private/private-moo.cc
+Examining apt-private/private-output.cc
+Examining apt-private/private-search.cc
+Examining apt-private/private-show.cc
+Examining apt-private/private-source.cc
+Examining apt-private/private-sources.cc
+Examining apt-private/private-unmet.cc
+Examining apt-private/private-update.cc
+Examining apt-private/private-upgrade.cc
+Examining apt-private/private-utils.cc
+
+FINAL RESULTS:
+
+apt-private/private-download.cc:234:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+apt-private/private-source.cc:528:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-source.cc:561:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:28:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:32:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:35:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:39:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:60:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:64:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:68:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-utils.cc:71:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-private/private-install.cc:547:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-install.cc:549:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-install.cc:550:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-output.cc:670:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-utils.cc:30:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-utils.cc:62:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-utils.cc:66:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-private/private-utils.cc:81:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+
+ANALYSIS SUMMARY:
+
+Hits = 19
+Lines analyzed = 6255 in approximately 0.28 seconds (22179 lines/second)
+Physical Source Lines of Code (SLOC) = 4974
+Hits@level = [0]   5 [1]   7 [2]   0 [3]   8 [4]  10 [5]   1
+Hits@level+ = [0+]  31 [1+]  26 [2+]  19 [3+]  19 [4+]  11 [5+]   1
+Hits/KSLOC@level+ = [0+] 6.23241 [1+] 5.22718 [2+] 3.81986 [3+] 3.81986 [4+] 2.2115 [5+] 0.201045
+Minimum risk level = 3
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.

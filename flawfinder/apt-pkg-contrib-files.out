@@ -1,0 +1,129 @@
+Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining contrib/cdromutl.cc
+Examining contrib/cmndline.cc
+Examining contrib/configuration.cc
+Examining contrib/crc-16.cc
+Examining contrib/error.cc
+Examining contrib/fileutl.cc
+Examining contrib/gpgv.cc
+Examining contrib/hashes.cc
+Examining contrib/hashsum.cc
+Examining contrib/md5.cc
+Examining contrib/mmap.cc
+Examining contrib/netrc.cc
+Examining contrib/progress.cc
+Examining contrib/proxy.cc
+Examining contrib/sha1.cc
+Examining contrib/sha2_internal.cc
+Examining contrib/srvrec.cc
+Examining contrib/strutl.cc
+
+FINAL RESULTS:
+
+contrib/fileutl.cc:644:  [5] (race) readlink:
+  This accepts filename arguments; if an attacker can move those files or
+  change the link content, a race condition results. Also, it does not
+  terminate with ASCII NUL. (CWE-362, CWE-20). Reconsider approach.
+contrib/fileutl.cc:944:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+contrib/cdromutl.cc:102:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/cdromutl.cc:112:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/cdromutl.cc:152:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/cdromutl.cc:169:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/cdromutl.cc:190:  [4] (race) access:
+  This usually indicates a security flaw. If an attacker can change anything
+  along the path between the call to access() and the file's actual use
+  (e.g., by moving files), the attacker can exploit the race condition
+  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())
+  and try to open the file directly.
+contrib/error.cc:161:  [4] (format) vsnprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+contrib/fileutl.cc:122:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/fileutl.cc:1989:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/fileutl.cc:2909:  [4] (shell) execv:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/gpgv.cc:51:  [4] (format) vsnprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+contrib/gpgv.cc:254:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+contrib/strutl.cc:1402:  [4] (format) vsnprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+contrib/strutl.cc:1459:  [4] (format) vsnprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+contrib/fileutl.cc:105:  [3] (misc) chroot:
+  chroot can be very helpful, but is hard to use correctly (CWE-250, CWE-22).
+  Make sure the program immediately chdir("/"), closes file descriptors, and
+  drops root privileges, and that all necessary files (and no more!) are in
+  the new root.
+contrib/fileutl.cc:686:  [3] (buffer) realpath:
+  This function does not protect against buffer overflows, and some
+  implementations can overflow internally (CWE-120/CWE-785!). Ensure that the
+  destination buffer is at least of size MAXPATHLEN, andto protect against
+  implementation problems, the input argument should also be checked to
+  ensure it is no larger than MAXPATHLEN.
+contrib/fileutl.cc:2783:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+contrib/fileutl.cc:3071:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+contrib/netrc.cc:55:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+contrib/strutl.cc:934:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+
+ANALYSIS SUMMARY:
+
+Hits = 21
+Lines analyzed = 10975 in approximately 0.48 seconds (22948 lines/second)
+Physical Source Lines of Code (SLOC) = 8204
+Hits@level = [0]  14 [1]  43 [2]  38 [3]   6 [4]  13 [5]   2
+Hits@level+ = [0+] 116 [1+] 102 [2+]  59 [3+]  21 [4+]  15 [5+]   2
+Hits/KSLOC@level+ = [0+] 14.1394 [1+] 12.433 [2+] 7.19161 [3+] 2.55973 [4+] 1.82838 [5+] 0.243784
+Minimum risk level = 3
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.

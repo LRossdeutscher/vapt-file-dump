@@ -1,0 +1,81 @@
+Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining ftparchive/apt-ftparchive.cc
+Examining ftparchive/byhash.cc
+Examining ftparchive/cachedb.cc
+Examining ftparchive/contents.cc
+Examining ftparchive/multicompress.cc
+Examining ftparchive/override.cc
+Examining ftparchive/sources.cc
+Examining ftparchive/writer.cc
+
+FINAL RESULTS:
+
+ftparchive/multicompress.cc:247:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+ftparchive/multicompress.cc:366:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+ftparchive/writer.cc:149:  [5] (race) readlink:
+  This accepts filename arguments; if an attacker can move those files or
+  change the link content, a race condition results. Also, it does not
+  terminate with ASCII NUL. (CWE-362, CWE-20). Reconsider approach.
+ftparchive/writer.cc:302:  [5] (race) readlink:
+  This accepts filename arguments; if an attacker can move those files or
+  change the link content, a race condition results. Also, it does not
+  terminate with ASCII NUL. (CWE-362, CWE-20). Reconsider approach.
+ftparchive/writer.cc:817:  [5] (race) readlink:
+  This accepts filename arguments; if an attacker can move those files or
+  change the link content, a race condition results. Also, it does not
+  terminate with ASCII NUL. (CWE-362, CWE-20). Reconsider approach.
+ftparchive/contents.cc:281:  [4] (buffer) strcat:
+  Does not check for buffer overflows when concatenating to destination
+  [MS-banned] (CWE-120). Consider using strcat_s, strncat, strlcat, or
+  snprintf (warning: strncat is easily misused).
+ftparchive/contents.cc:358:  [4] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused).
+ftparchive/writer.cc:669:  [4] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused).
+ftparchive/writer.cc:150:  [3] (buffer) realpath:
+  This function does not protect against buffer overflows, and some
+  implementations can overflow internally (CWE-120/CWE-785!). Ensure that the
+  destination buffer is at least of size MAXPATHLEN, andto protect against
+  implementation problems, the input argument should also be checked to
+  ensure it is no larger than MAXPATHLEN.
+ftparchive/writer.cc:195:  [3] (buffer) realpath:
+  This function does not protect against buffer overflows, and some
+  implementations can overflow internally (CWE-120/CWE-785!). Ensure that the
+  destination buffer is at least of size MAXPATHLEN, andto protect against
+  implementation problems, the input argument should also be checked to
+  ensure it is no larger than MAXPATHLEN.
+ftparchive/writer.cc:227:  [3] (buffer) realpath:
+  This function does not protect against buffer overflows, and some
+  implementations can overflow internally (CWE-120/CWE-785!). Ensure that the
+  destination buffer is at least of size MAXPATHLEN, andto protect against
+  implementation problems, the input argument should also be checked to
+  ensure it is no larger than MAXPATHLEN.
+ftparchive/writer.cc:818:  [3] (buffer) realpath:
+  This function does not protect against buffer overflows, and some
+  implementations can overflow internally (CWE-120/CWE-785!). Ensure that the
+  destination buffer is at least of size MAXPATHLEN, andto protect against
+  implementation problems, the input argument should also be checked to
+  ensure it is no larger than MAXPATHLEN.
+
+ANALYSIS SUMMARY:
+
+Hits = 12
+Lines analyzed = 4025 in approximately 0.17 seconds (23170 lines/second)
+Physical Source Lines of Code (SLOC) = 2871
+Hits@level = [0]   3 [1]   8 [2]   7 [3]   4 [4]   3 [5]   5
+Hits@level+ = [0+]  30 [1+]  27 [2+]  19 [3+]  12 [4+]   8 [5+]   5
+Hits/KSLOC@level+ = [0+] 10.4493 [1+] 9.40439 [2+] 6.6179 [3+] 4.17973 [4+] 2.78649 [5+] 1.74155
+Minimum risk level = 3
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.

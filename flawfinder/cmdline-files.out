@@ -1,0 +1,40 @@
+Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining cmdline/apt-cache.cc
+Examining cmdline/apt.cc
+Examining cmdline/apt-cdrom.cc
+Examining cmdline/apt-config.cc
+Examining cmdline/apt-dump-solver.cc
+Examining cmdline/apt-extracttemplates.cc
+Examining cmdline/apt-get.cc
+Examining cmdline/apt-helper.cc
+Examining cmdline/apt-internal-planner.cc
+Examining cmdline/apt-internal-solver.cc
+Examining cmdline/apt-mark.cc
+Examining cmdline/apt-sortpkgs.cc
+
+FINAL RESULTS:
+
+cmdline/apt-dump-solver.cc:113:  [4] (shell) execv:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+cmdline/apt-dump-solver.cc:72:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+
+ANALYSIS SUMMARY:
+
+Hits = 2
+Lines analyzed = 3748 in approximately 0.16 seconds (23231 lines/second)
+Physical Source Lines of Code (SLOC) = 2871
+Hits@level = [0]  20 [1]  10 [2]   5 [3]   1 [4]   1 [5]   0
+Hits@level+ = [0+]  37 [1+]  17 [2+]   7 [3+]   2 [4+]   1 [5+]   0
+Hits/KSLOC@level+ = [0+] 12.8875 [1+] 5.92128 [2+] 2.43817 [3+] 0.696621 [4+] 0.348311 [5+]   0
+Minimum risk level = 3
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.

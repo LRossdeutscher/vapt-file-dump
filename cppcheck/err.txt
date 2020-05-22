@@ -1,0 +1,2186 @@
+apt-inst/contrib/arfile.cc:39:9: style: struct member 'MemberHeader::Magic' is never used. [unusedStructMember]
+   char Magic[2];
+        ^
+apt-inst/contrib/extracttar.cc:225:20: style: Local variable 'Block' shadows outer variable [shadowVariable]
+     unsigned char Block[512];
+                   ^
+apt-inst/contrib/extracttar.cc:131:21: note: Shadowed declaration
+      unsigned char Block[512];
+                    ^
+apt-inst/contrib/extracttar.cc:225:20: note: Shadow variable
+     unsigned char Block[512];
+                   ^
+apt-inst/contrib/extracttar.cc:244:20: style: Local variable 'Block' shadows outer variable [shadowVariable]
+     unsigned char Block[512];
+                   ^
+apt-inst/contrib/extracttar.cc:131:21: note: Shadowed declaration
+      unsigned char Block[512];
+                    ^
+apt-inst/contrib/extracttar.cc:244:20: note: Shadow variable
+     unsigned char Block[512];
+                   ^
+apt-inst/extract.cc:96:19: style: Redundant condition: If 'EXPR == '/'', the comparison 'EXPR != 0' is always true. [redundantCondition]
+   for (; *I != 0 && *I == '/'; I++);
+                  ^
+apt-pkg/acquire-item.cc:2348:14: style: Local variable 'types' shadows outer variable [shadowVariable]
+  auto const types = VectorizeString(Target.Option(IndexTarget::COMPRESSIONTYPES), ' ');
+             ^
+apt-pkg/acquire-item.cc:2146:30: note: Shadowed declaration
+   std::vector<char const *> types;
+                             ^
+apt-pkg/acquire-item.cc:2348:14: note: Shadow variable
+  auto const types = VectorizeString(Target.Option(IndexTarget::COMPRESSIONTYPES), ' ');
+             ^
+apt-pkg/acquire-item.cc:2019:113: performance: Function parameter 'type' should be passed by const reference. [passedByValue]
+  std::copy_if(types.begin(), types.end()-1, std::ostream_iterator<std::string>(os, " "), [&](std::string const type) {
+                                                                                                                ^
+apt-pkg/acquire-item.cc:2320:7: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+      {
+      ^
+apt-pkg/acquire-item.cc:2402:0: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+        RemoveFileForBootstrapLinking(Debug, CurrentPackagesFile, PatchedFile + ext) == false)
+^
+apt-pkg/acquire-item.cc:1751:32: style: Variable 'FinalReleasegpg' is assigned a value that is never used. [unreadVariable]
+  string const FinalReleasegpg = GetFinalFileNameFromURI(DetachedSigTarget.URI);
+                               ^
+apt-pkg/acquire-method.cc:389:19: style: Local variable 'End' shadows outer variable [shadowVariable]
+            char *End;
+                  ^
+apt-pkg/acquire-method.cc:355:13: note: Shadowed declaration
+      char *End;
+            ^
+apt-pkg/acquire-method.cc:389:19: note: Shadow variable
+            char *End;
+                  ^
+apt-pkg/acquire.cc:305:12: style: Local variable 'SavedDesc' shadows outer variable [shadowVariable]
+      auto SavedDesc = Item->GetItemDesc();
+           ^
+apt-pkg/acquire.cc:281:9: note: Shadowed declaration
+   auto SavedDesc = Item->GetItemDesc();
+        ^
+apt-pkg/acquire.cc:305:12: note: Shadow variable
+      auto SavedDesc = Item->GetItemDesc();
+           ^
+apt-pkg/acquire.cc:1349:21: style: Unused variable: status [unusedVariable]
+      ostringstream status;
+                    ^
+apt-pkg/acquire.cc:419:0: information: Skipping configuration '_SC_NPROCESSORS_ONLN' since the value of '_SC_NPROCESSORS_ONLN' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      long cpuCount = sysconf(_SC_NPROCESSORS_ONLN) * 2;
+^
+apt-pkg/aptconfiguration.cc:78:20: style: Condition 'types.empty()==false' is always false [knownConditionTrueFalse]
+ if (types.empty() == false) {
+                   ^
+apt-pkg/aptconfiguration.cc:359:26: style: Condition 'compressors.empty()==false' is always false [knownConditionTrueFalse]
+ if (compressors.empty() == false) {
+                         ^
+apt-pkg/cacheset.cc:719:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/cacheset.cc:764:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/cacheset.cc:799:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/cacheset.cc:860:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/cacheset.cc:893:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/cacheset.cc:620:34: style: Local variable 'Cand' shadows outer variable [shadowVariable]
+     pkgCache::VerIterator const Cand = Cache[Prv.OwnerPkg()].CandidateVerIter(Cache);
+                                 ^
+apt-pkg/cacheset.cc:611:31: note: Shadowed declaration
+  pkgCache::VerIterator const Cand = Cache[T].CandidateVerIter(Cache);
+                              ^
+apt-pkg/cacheset.cc:620:34: note: Shadow variable
+     pkgCache::VerIterator const Cand = Cache[Prv.OwnerPkg()].CandidateVerIter(Cache);
+                                 ^
+apt-pkg/cacheset.cc:640:34: style: Local variable 'Cand' shadows outer variable [shadowVariable]
+     pkgCache::VerIterator const Cand = Prv.OwnerPkg().CurrentVer();
+                                 ^
+apt-pkg/cacheset.cc:631:31: note: Shadowed declaration
+  pkgCache::VerIterator const Cand = T.CurrentVer();
+                              ^
+apt-pkg/cacheset.cc:640:34: note: Shadow variable
+     pkgCache::VerIterator const Cand = Prv.OwnerPkg().CurrentVer();
+                                 ^
+apt-pkg/cacheset.cc:666:34: style: Local variable 'Cand' shadows outer variable [shadowVariable]
+     pkgCache::VerIterator const Cand = Prv.OwnerPkg().VersionList();
+                                 ^
+apt-pkg/cacheset.cc:657:31: note: Shadowed declaration
+  pkgCache::VerIterator const Cand = T.VersionList();
+                              ^
+apt-pkg/cacheset.cc:666:34: note: Shadow variable
+     pkgCache::VerIterator const Cand = Prv.OwnerPkg().VersionList();
+                                 ^
+apt-pkg/contrib/cmndline.cc:304:18: style: Redundant condition: If 'EXPR == '-'', the comparison 'EXPR != 0' is always true. [redundantCondition]
+  for (; *J != 0 && *J == '-'; J++);
+                 ^
+apt-pkg/contrib/configuration.cc:792:16: style: Condition 'Root!=NULL' is always true [knownConditionTrueFalse]
+      if (Root != NULL)
+               ^
+apt-pkg/contrib/configuration.cc:738:12: note: Assuming that condition 'Top==0' is not redundant
+   if (Top == 0)
+           ^
+apt-pkg/contrib/configuration.cc:740:59: note: Assignment 'Root=(root==NULL)?NULL:Top', assigned value is 0
+   const Configuration::Item* const Root = (root == NULL) ? NULL : Top;
+                                                          ^
+apt-pkg/contrib/configuration.cc:792:16: note: Condition 'Root!=NULL' is always true
+      if (Root != NULL)
+               ^
+apt-pkg/contrib/configuration.cc:685:44: warning: Either the condition 'Top!=0' is redundant or there is possible null pointer dereference: Top. [nullPointerRedundantCheck]
+      Set(NewRoot + Top->FullTag(OldRoot), Top->Value);
+                                           ^
+apt-pkg/contrib/configuration.cc:687:15: note: Assuming that condition 'Top!=0' is not redundant
+      if (Top != 0)
+              ^
+apt-pkg/contrib/configuration.cc:685:44: note: Null pointer dereference
+      Set(NewRoot + Top->FullTag(OldRoot), Top->Value);
+                                           ^
+apt-pkg/contrib/fileutl.cc:2008:17: warning: Virtual function 'InternalClose' is called from destructor '~PipedFileFdPrivate()' at line 2022. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2022:36: note: Calling InternalClose
+   virtual ~PipedFileFdPrivate() { InternalClose(""); }
+                                   ^
+apt-pkg/contrib/fileutl.cc:2008:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2096:17: warning: Virtual function 'InternalClose' is called from destructor '~DirectFileFdPrivate()' at line 2100. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:2100:37: note: Calling InternalClose
+   virtual ~DirectFileFdPrivate() { InternalClose(""); }
+                                    ^
+apt-pkg/contrib/fileutl.cc:2096:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1211:43: style: The function 'get_compressor' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual APT::Configuration::Compressor get_compressor() const APT_OVERRIDE
+                                          ^
+apt-pkg/contrib/fileutl.cc:1020:43: note: Virtual function in base class
+   virtual APT::Configuration::Compressor get_compressor() const
+                                          ^
+apt-pkg/contrib/fileutl.cc:1211:43: note: Function in derived class
+   virtual APT::Configuration::Compressor get_compressor() const APT_OVERRIDE
+                                          ^
+apt-pkg/contrib/fileutl.cc:1215:17: style: The function 'set_compressor' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void set_compressor(APT::Configuration::Compressor const &compressor)  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1024:17: note: Virtual function in base class
+   virtual void set_compressor(APT::Configuration::Compressor const &compressor)
+                ^
+apt-pkg/contrib/fileutl.cc:1215:17: note: Function in derived class
+   virtual void set_compressor(APT::Configuration::Compressor const &compressor)  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1219:25: style: The function 'get_openmode' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned int get_openmode() const  APT_OVERRIDE
+                        ^
+apt-pkg/contrib/fileutl.cc:1028:25: note: Virtual function in base class
+   virtual unsigned int get_openmode() const
+                        ^
+apt-pkg/contrib/fileutl.cc:1219:25: note: Function in derived class
+   virtual unsigned int get_openmode() const  APT_OVERRIDE
+                        ^
+apt-pkg/contrib/fileutl.cc:1223:17: style: The function 'set_openmode' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void set_openmode(unsigned int openmode)  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1032:17: note: Virtual function in base class
+   virtual void set_openmode(unsigned int openmode)
+                ^
+apt-pkg/contrib/fileutl.cc:1223:17: note: Function in derived class
+   virtual void set_openmode(unsigned int openmode)  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1227:17: style: The function 'get_is_pipe' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool get_is_pipe() const  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1036:17: note: Virtual function in base class
+   virtual bool get_is_pipe() const
+                ^
+apt-pkg/contrib/fileutl.cc:1227:17: note: Function in derived class
+   virtual bool get_is_pipe() const  APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1231:17: style: The function 'set_is_pipe' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void set_is_pipe(bool is_pipe) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1040:17: note: Virtual function in base class
+   virtual void set_is_pipe(bool is_pipe)
+                ^
+apt-pkg/contrib/fileutl.cc:1231:17: note: Function in derived class
+   virtual void set_is_pipe(bool is_pipe) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1236:31: style: The function 'get_seekpos' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long get_seekpos() const APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1044:31: note: Virtual function in base class
+   virtual unsigned long long get_seekpos() const
+                              ^
+apt-pkg/contrib/fileutl.cc:1236:31: note: Function in derived class
+   virtual unsigned long long get_seekpos() const APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1240:17: style: The function 'set_seekpos' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void set_seekpos(unsigned long long seekpos) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1048:17: note: Virtual function in base class
+   virtual void set_seekpos(unsigned long long seekpos)
+                ^
+apt-pkg/contrib/fileutl.cc:1240:17: note: Function in derived class
+   virtual void set_seekpos(unsigned long long seekpos) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1244:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1244:17: note: Function in derived class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1250:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1250:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1257:17: style: The function 'InternalReadError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1064:17: note: Virtual function in base class
+   virtual bool InternalReadError() { return filefd->FileFdErrno("read",_("Read error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1257:17: note: Function in derived class
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1261:19: style: The function 'InternalReadLine' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual char * InternalReadLine(char * To, unsigned long long Size) APT_OVERRIDE
+                  ^
+apt-pkg/contrib/fileutl.cc:1065:19: note: Virtual function in base class
+   virtual char * InternalReadLine(char * To, unsigned long long Size)
+                  ^
+apt-pkg/contrib/fileutl.cc:1261:19: note: Function in derived class
+   virtual char * InternalReadLine(char * To, unsigned long long Size) APT_OVERRIDE
+                  ^
+apt-pkg/contrib/fileutl.cc:1267:17: style: The function 'InternalFlush' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalFlush() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1106:17: note: Virtual function in base class
+   virtual bool InternalFlush()
+                ^
+apt-pkg/contrib/fileutl.cc:1267:17: note: Function in derived class
+   virtual bool InternalFlush() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1283:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1283:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1298:17: style: The function 'InternalWriteError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1111:17: note: Virtual function in base class
+   virtual bool InternalWriteError() { return filefd->FileFdErrno("write",_("Write error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1298:17: note: Function in derived class
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1302:17: style: The function 'InternalSeek' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1112:17: note: Virtual function in base class
+   virtual bool InternalSeek(unsigned long long const To)
+                ^
+apt-pkg/contrib/fileutl.cc:1302:17: note: Function in derived class
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1308:17: style: The function 'InternalSkip' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1151:17: note: Virtual function in base class
+   virtual bool InternalSkip(unsigned long long Over)
+                ^
+apt-pkg/contrib/fileutl.cc:1308:17: note: Function in derived class
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1314:17: style: The function 'InternalTruncate' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalTruncate(unsigned long long const Size) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1164:17: note: Virtual function in base class
+   virtual bool InternalTruncate(unsigned long long const)
+                ^
+apt-pkg/contrib/fileutl.cc:1314:17: note: Function in derived class
+   virtual bool InternalTruncate(unsigned long long const Size) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1320:31: style: The function 'InternalTell' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1168:31: note: Virtual function in base class
+   virtual unsigned long long InternalTell()
+                              ^
+apt-pkg/contrib/fileutl.cc:1320:31: note: Function in derived class
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1326:31: style: The function 'InternalSize' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1176:31: note: Virtual function in base class
+   virtual unsigned long long InternalSize()
+                              ^
+apt-pkg/contrib/fileutl.cc:1326:31: note: Function in derived class
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1332:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1332:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1336:17: style: The function 'InternalAlwaysAutoClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalAlwaysAutoClose() const APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1196:17: note: Virtual function in base class
+   virtual bool InternalAlwaysAutoClose() const { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1336:17: note: Function in derived class
+   virtual bool InternalAlwaysAutoClose() const APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1898:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1898:17: note: Function in derived class
+   virtual bool InternalOpen(int const, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2000:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:2000:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:2004:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:2004:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:2008:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:2008:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2028:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const, unsigned int const) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:2028:17: note: Function in derived class
+   virtual bool InternalOpen(int const, unsigned int const) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:2029:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:2029:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:2033:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:2033:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:2043:17: style: The function 'InternalSeek' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1112:17: note: Virtual function in base class
+   virtual bool InternalSeek(unsigned long long const To)
+                ^
+apt-pkg/contrib/fileutl.cc:2043:17: note: Function in derived class
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2052:17: style: The function 'InternalSkip' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1151:17: note: Virtual function in base class
+   virtual bool InternalSkip(unsigned long long Over)
+                ^
+apt-pkg/contrib/fileutl.cc:2052:17: note: Function in derived class
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2072:17: style: The function 'InternalTruncate' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalTruncate(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1164:17: note: Virtual function in base class
+   virtual bool InternalTruncate(unsigned long long const)
+                ^
+apt-pkg/contrib/fileutl.cc:2072:17: note: Function in derived class
+   virtual bool InternalTruncate(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2088:31: style: The function 'InternalTell' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1168:31: note: Virtual function in base class
+   virtual unsigned long long InternalTell()
+                              ^
+apt-pkg/contrib/fileutl.cc:2088:31: note: Function in derived class
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:2092:31: style: The function 'InternalSize' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1176:31: note: Virtual function in base class
+   virtual unsigned long long InternalSize()
+                              ^
+apt-pkg/contrib/fileutl.cc:2092:31: note: Function in derived class
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:2096:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:2096:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:2097:17: style: The function 'InternalAlwaysAutoClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalAlwaysAutoClose() const APT_OVERRIDE { return false; }
+                ^
+apt-pkg/contrib/fileutl.cc:1196:17: note: Virtual function in base class
+   virtual bool InternalAlwaysAutoClose() const { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:2097:17: note: Function in derived class
+   virtual bool InternalAlwaysAutoClose() const APT_OVERRIDE { return false; }
+                ^
+apt-pkg/contrib/fileutl.cc:703:18: style: Redundant initialization for 'found'. The initialized value is overwritten before it is read. [redundantInitialization]
+   while ((found = file.find("/./")) != string::npos)
+                 ^
+apt-pkg/contrib/fileutl.cc:702:17: note: found is initialized
+   size_t found = string::npos;
+                ^
+apt-pkg/contrib/fileutl.cc:703:18: note: found is overwritten
+   while ((found = file.find("/./")) != string::npos)
+                 ^
+apt-pkg/contrib/fileutl.cc:1154:12: style: Local variable 'buffer' shadows outer variable [shadowVariable]
+      char buffer[buffersize];
+           ^
+apt-pkg/contrib/fileutl.cc:1008:18: note: Shadowed declaration
+   simple_buffer buffer;
+                 ^
+apt-pkg/contrib/fileutl.cc:1154:12: note: Shadow variable
+      char buffer[buffersize];
+           ^
+apt-pkg/contrib/fileutl.cc:1513:17: warning: Virtual function 'InternalClose' is called from destructor '~Bz2FileFdPrivate()' at line 1523. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1523:34: note: Calling InternalClose
+   virtual ~Bz2FileFdPrivate() { InternalClose(""); }
+                                 ^
+apt-pkg/contrib/fileutl.cc:1513:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1477:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1477:17: note: Function in derived class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1488:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1488:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1492:17: style: The function 'InternalReadError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1064:17: note: Virtual function in base class
+   virtual bool InternalReadError() { return filefd->FileFdErrno("read",_("Read error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1492:17: note: Function in derived class
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1500:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1500:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1504:17: style: The function 'InternalWriteError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1111:17: note: Virtual function in base class
+   virtual bool InternalWriteError() { return filefd->FileFdErrno("write",_("Write error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1504:17: note: Function in derived class
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1512:17: style: The function 'InternalStream' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1195:17: note: Virtual function in base class
+   virtual bool InternalStream() const { return false; }
+                ^
+apt-pkg/contrib/fileutl.cc:1512:17: note: Function in derived class
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1513:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1513:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1642:17: warning: Virtual function 'InternalClose' is called from destructor '~Lz4FileFdPrivate()' at line 1681. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1681:7: note: Calling InternalClose
+      InternalClose("");
+      ^
+apt-pkg/contrib/fileutl.cc:1642:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1539:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1539:17: note: Function in derived class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1572:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1572:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1610:17: style: The function 'InternalReadError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1064:17: note: Virtual function in base class
+   virtual bool InternalReadError() { return filefd->FileFdErrno("read",_("Read error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1610:17: note: Function in derived class
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1616:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1616:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1629:17: style: The function 'InternalWriteError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1111:17: note: Virtual function in base class
+   virtual bool InternalWriteError() { return filefd->FileFdErrno("write",_("Write error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1629:17: note: Function in derived class
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1635:17: style: The function 'InternalStream' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1195:17: note: Virtual function in base class
+   virtual bool InternalStream() const { return false; }
+                ^
+apt-pkg/contrib/fileutl.cc:1635:17: note: Function in derived class
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1637:17: style: The function 'InternalFlush' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalFlush() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1106:17: note: Virtual function in base class
+   virtual bool InternalFlush()
+                ^
+apt-pkg/contrib/fileutl.cc:1637:17: note: Function in derived class
+   virtual bool InternalFlush() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1642:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1642:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1881:17: warning: Virtual function 'InternalClose' is called from destructor '~LzmaFileFdPrivate()' at line 1889. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1889:35: note: Calling InternalClose
+   virtual ~LzmaFileFdPrivate() { InternalClose(""); }
+                                  ^
+apt-pkg/contrib/fileutl.cc:1881:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1697:7: style: Struct 'LZMAFILE' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+      LZMAFILE(FileFd * const fd) : file(nullptr), filefd(fd), eof(false), compressing(false) { buffer[0] = '\0'; }
+      ^
+apt-pkg/contrib/fileutl.cc:1755:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1755:17: note: Function in derived class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1807:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1807:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1843:17: style: The function 'InternalReadError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1064:17: note: Virtual function in base class
+   virtual bool InternalReadError() { return filefd->FileFdErrno("read",_("Read error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1843:17: note: Function in derived class
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1847:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1847:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1876:17: style: The function 'InternalWriteError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1111:17: note: Virtual function in base class
+   virtual bool InternalWriteError() { return filefd->FileFdErrno("write",_("Write error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1876:17: note: Function in derived class
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1880:17: style: The function 'InternalStream' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1195:17: note: Virtual function in base class
+   virtual bool InternalStream() const { return false; }
+                ^
+apt-pkg/contrib/fileutl.cc:1880:17: note: Function in derived class
+   virtual bool InternalStream() const APT_OVERRIDE { return true; }
+                ^
+apt-pkg/contrib/fileutl.cc:1881:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1881:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1456:17: warning: Virtual function 'InternalClose' is called from destructor '~GzipFileFdPrivate()' at line 1469. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1469:35: note: Calling InternalClose
+   virtual ~GzipFileFdPrivate() { InternalClose(""); }
+                                  ^
+apt-pkg/contrib/fileutl.cc:1456:17: note: InternalClose is a virtual function
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1350:17: style: The function 'InternalOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1053:17: note: Virtual function in base class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1350:17: note: Function in derived class
+   virtual bool InternalOpen(int const iFd, unsigned int const Mode) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1361:20: style: The function 'InternalUnbufferedRead' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1063:20: note: Virtual function in base class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1361:20: note: Function in derived class
+   virtual ssize_t InternalUnbufferedRead(void * const To, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1365:17: style: The function 'InternalReadError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1064:17: note: Virtual function in base class
+   virtual bool InternalReadError() { return filefd->FileFdErrno("read",_("Read error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1365:17: note: Function in derived class
+   virtual bool InternalReadError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1373:19: style: The function 'InternalReadLine' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual char * InternalReadLine(char * To, unsigned long long Size) APT_OVERRIDE
+                  ^
+apt-pkg/contrib/fileutl.cc:1065:19: note: Virtual function in base class
+   virtual char * InternalReadLine(char * To, unsigned long long Size)
+                  ^
+apt-pkg/contrib/fileutl.cc:1373:19: note: Function in derived class
+   virtual char * InternalReadLine(char * To, unsigned long long Size) APT_OVERRIDE
+                  ^
+apt-pkg/contrib/fileutl.cc:1377:20: style: The function 'InternalWrite' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1110:20: note: Virtual function in base class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) = 0;
+                   ^
+apt-pkg/contrib/fileutl.cc:1377:20: note: Function in derived class
+   virtual ssize_t InternalWrite(void const * const From, unsigned long long const Size) APT_OVERRIDE
+                   ^
+apt-pkg/contrib/fileutl.cc:1381:17: style: The function 'InternalWriteError' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1111:17: note: Virtual function in base class
+   virtual bool InternalWriteError() { return filefd->FileFdErrno("write",_("Write error")); }
+                ^
+apt-pkg/contrib/fileutl.cc:1381:17: note: Function in derived class
+   virtual bool InternalWriteError() APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1389:17: style: The function 'InternalSeek' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1112:17: note: Virtual function in base class
+   virtual bool InternalSeek(unsigned long long const To)
+                ^
+apt-pkg/contrib/fileutl.cc:1389:17: note: Function in derived class
+   virtual bool InternalSeek(unsigned long long const To) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1398:17: style: The function 'InternalSkip' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1151:17: note: Virtual function in base class
+   virtual bool InternalSkip(unsigned long long Over)
+                ^
+apt-pkg/contrib/fileutl.cc:1398:17: note: Function in derived class
+   virtual bool InternalSkip(unsigned long long Over) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1418:31: style: The function 'InternalTell' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1168:31: note: Virtual function in base class
+   virtual unsigned long long InternalTell()
+                              ^
+apt-pkg/contrib/fileutl.cc:1418:31: note: Function in derived class
+   virtual unsigned long long InternalTell() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1422:31: style: The function 'InternalSize' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1176:31: note: Virtual function in base class
+   virtual unsigned long long InternalSize()
+                              ^
+apt-pkg/contrib/fileutl.cc:1422:31: note: Function in derived class
+   virtual unsigned long long InternalSize() APT_OVERRIDE
+                              ^
+apt-pkg/contrib/fileutl.cc:1456:17: style: The function 'InternalClose' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:1194:17: note: Virtual function in base class
+   virtual bool InternalClose(std::string const &FileName) = 0;
+                ^
+apt-pkg/contrib/fileutl.cc:1456:17: note: Function in derived class
+   virtual bool InternalClose(std::string const &FileName) APT_OVERRIDE
+                ^
+apt-pkg/contrib/fileutl.cc:2787:0: information: Skipping configuration 'P_tmpdir' since the value of 'P_tmpdir' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      tmpdir = P_tmpdir;
+^
+apt-pkg/contrib/gpgv.cc:126:9: style: The scope of the variable 'statusfdstr' can be reduced. [variableScope]
+   char statusfdstr[10];
+        ^
+apt-pkg/contrib/hashes.cc:174:0: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+         if (hs.usable())
+^
+apt-pkg/contrib/mmap.cc:272:0: information: Skipping configuration 'MAP_ANONYMOUS;_POSIX_MAPPED_FILES' since the value of 'MAP_ANONYMOUS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  int Map = MAP_PRIVATE | MAP_ANONYMOUS;
+^
+apt-pkg/contrib/mmap.cc:280:0: information: Skipping configuration 'MAP_ANONYMOUS;_POSIX_MAPPED_FILES' since the value of 'MAP_ANONYMOUS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   Map = MAP_SHARED | MAP_ANONYMOUS;
+^
+apt-pkg/contrib/mmap.cc:478:0: information: Skipping configuration 'MREMAP_MAYMOVE;_POSIX_MAPPED_FILES;__linux__' since the value of 'MREMAP_MAYMOVE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   Base = mremap(Base, WorkSpace, newSize, MREMAP_MAYMOVE);
+^
+apt-pkg/contrib/sha2_internal.cc:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+apt-pkg/contrib/srvrec.h:34:29: performance: Function parameter 'Target' should be passed by const reference. [passedByValue]
+   SrvRec(std::string const Target, u_int16_t const Priority,
+                            ^
+apt-pkg/contrib/strutl.cc:243:18: style: Redundant condition: If 'EXPR == ' '', the comparison 'EXPR != 0' is always true. [redundantCondition]
+   for (;*C != 0 && *C == ' '; C++);
+                 ^
+apt-pkg/contrib/strutl.cc:304:18: style: Redundant condition: If 'EXPR == ' '', the comparison 'EXPR != 0' is always true. [redundantCondition]
+   for (;*C != 0 && *C == ' '; C++);
+                 ^
+apt-pkg/contrib/strutl.cc:1098:17: style: Variable 'Tm.tm_mon' is reassigned a value before the old one has been used. [redundantAssignment]
+      Tm.tm_mon = MonthConv(Month);
+                ^
+apt-pkg/contrib/strutl.cc:1091:15: note: Tm.tm_mon is assigned
+     Tm.tm_mon--;
+              ^
+apt-pkg/contrib/strutl.cc:1098:17: note: Tm.tm_mon is overwritten
+      Tm.tm_mon = MonthConv(Month);
+                ^
+apt-pkg/contrib/strutl.cc:215:11: style: Local variable 'Len' shadows outer argument [shadowArgument]
+      int Len;
+          ^
+apt-pkg/contrib/strutl.cc:201:41: note: Shadowed declaration
+char *_strtabexpand(char *String,size_t Len)
+                                        ^
+apt-pkg/contrib/strutl.cc:215:11: note: Shadow variable
+      int Len;
+          ^
+apt-pkg/contrib/strutl.cc:1683:18: style: Local variable 'I' shadows outer variable [shadowVariable]
+   for (unsigned I = 0; I != Host.length();)
+                 ^
+apt-pkg/contrib/strutl.cc:1608:27: note: Shadowed declaration
+   string::const_iterator I = U.begin();
+                          ^
+apt-pkg/contrib/strutl.cc:1683:18: note: Shadow variable
+   for (unsigned I = 0; I != Host.length();)
+                 ^
+apt-pkg/deb/deblistparser.cc:949:13: style: Local variable 'spzName' shadows outer variable [shadowVariable]
+     string spzName = Package.to_string();
+            ^
+apt-pkg/deb/deblistparser.cc:891:22: note: Shadowed declaration
+   std::string const spzName = Ver.ParentPkg().FullName(false);
+                     ^
+apt-pkg/deb/deblistparser.cc:949:13: note: Shadow variable
+     string spzName = Package.to_string();
+            ^
+apt-pkg/deb/deblistparser.cc:216:8: style: Variable 'G' is assigned a value that is never used. [unreadVariable]
+     G = Ver.ParentPkg().Group();
+       ^
+apt-pkg/deb/debmetaindex.cc:56:4: style: Class 'debReleaseIndexPrivate' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+   debReleaseIndexPrivate(std::map<std::string, std::string> const &Options) : CheckValidUntil(metaIndex::TRI_UNSET), ValidUntilMin(0), ValidUntilMax(0), ReleaseOptions(Options) {}
+   ^
+apt-pkg/deb/debmetaindex.cc:1005:7: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+  ret.emplace_back(O.first);
+      ^
+apt-pkg/deb/dpkgpm.cc:2319:11: style: Local variable 'pkgname' shadows outer variable [shadowVariable]
+     char pkgname[255], version[255];
+          ^
+apt-pkg/deb/dpkgpm.cc:2195:11: note: Shadowed declaration
+   string pkgname, reportfile, pkgver, arch;
+          ^
+apt-pkg/deb/dpkgpm.cc:2319:11: note: Shadow variable
+     char pkgname[255], version[255];
+          ^
+apt-pkg/deb/dpkgpm.cc:2402:18: style: Local variable 'pkgname' shadows outer variable [shadowVariable]
+      auto const pkgname = I.Pkg.end() ? "NULL" : I.Pkg.FullName();
+                 ^
+apt-pkg/deb/dpkgpm.cc:2195:11: note: Shadowed declaration
+   string pkgname, reportfile, pkgver, arch;
+          ^
+apt-pkg/deb/dpkgpm.cc:2402:18: note: Shadow variable
+      auto const pkgname = I.Pkg.end() ? "NULL" : I.Pkg.FullName();
+                 ^
+apt-pkg/edsp.cc:1285:15: style: Local variable 'PA' shadows outer variable [shadowVariable]
+    for (auto PA = GA.PackageList(); PA.end() == false; PA = GA.NextPkg(PA))
+              ^
+apt-pkg/edsp.cc:1281:31: note: Shadowed declaration
+        pkgCache::PkgIterator PA;
+                              ^
+apt-pkg/edsp.cc:1285:15: note: Shadow variable
+    for (auto PA = GA.PackageList(); PA.end() == false; PA = GA.NextPkg(PA))
+              ^
+apt-pkg/edsp.cc:1292:16: style: Local variable 'PA' shadows outer variable [shadowVariable]
+    auto const PA = Cache.FindPkg(pkgname.to_string());
+               ^
+apt-pkg/edsp.cc:1281:31: note: Shadowed declaration
+        pkgCache::PkgIterator PA;
+                              ^
+apt-pkg/edsp.cc:1292:16: note: Shadow variable
+    auto const PA = Cache.FindPkg(pkgname.to_string());
+               ^
+apt-pkg/edsp.cc:1457:14: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+     actions.emplace_back(std::move(p), pkgact);
+             ^
+apt-pkg/indexcopy.cc:122:11: error: Non-local variable 'this->Section' will use pointer to local variable 'Section'. [danglingLifetime]
+      this->Section = &Section;
+          ^
+apt-pkg/indexcopy.cc:122:23: note: Address of variable taken here.
+      this->Section = &Section;
+                      ^
+apt-pkg/indexcopy.cc:121:21: note: Variable created here.
+      pkgTagSection Section;
+                    ^
+apt-pkg/indexcopy.cc:122:11: note: Non-local variable 'this->Section' will use pointer to local variable 'Section'.
+      this->Section = &Section;
+          ^
+apt-pkg/indexcopy.cc:715:11: error: Non-local variable 'this->Section' will use pointer to local variable 'Section'. [danglingLifetime]
+      this->Section = &Section;
+          ^
+apt-pkg/indexcopy.cc:715:23: note: Address of variable taken here.
+      this->Section = &Section;
+                      ^
+apt-pkg/indexcopy.cc:714:21: note: Variable created here.
+      pkgTagSection Section;
+                    ^
+apt-pkg/indexcopy.cc:715:11: note: Non-local variable 'this->Section' will use pointer to local variable 'Section'.
+      this->Section = &Section;
+          ^
+apt-pkg/indexcopy.h:67:17: style: The function 'GetFile' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:49:17: note: Virtual function in base class
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) = 0;
+                ^
+apt-pkg/indexcopy.h:67:17: note: Function in derived class
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:68:17: style: The function 'RewriteEntry' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:50:17: note: Virtual function in base class
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) = 0;
+                ^
+apt-pkg/indexcopy.h:68:17: note: Function in derived class
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:69:24: style: The function 'GetFileName' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual const char *GetFileName() APT_OVERRIDE {return "Packages";};
+                       ^
+apt-pkg/indexcopy.h:51:24: note: Virtual function in base class
+   virtual const char *GetFileName() = 0;
+                       ^
+apt-pkg/indexcopy.h:69:24: note: Function in derived class
+   virtual const char *GetFileName() APT_OVERRIDE {return "Packages";};
+                       ^
+apt-pkg/indexcopy.h:70:24: style: The function 'Type' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual const char *Type() APT_OVERRIDE {return "Package";};
+                       ^
+apt-pkg/indexcopy.h:52:24: note: Virtual function in base class
+   virtual const char *Type() = 0;
+                       ^
+apt-pkg/indexcopy.h:70:24: note: Function in derived class
+   virtual const char *Type() APT_OVERRIDE {return "Package";};
+                       ^
+apt-pkg/indexcopy.h:82:17: style: The function 'GetFile' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:49:17: note: Virtual function in base class
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) = 0;
+                ^
+apt-pkg/indexcopy.h:82:17: note: Function in derived class
+   virtual bool GetFile(std::string &Filename,unsigned long long &Size) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:83:17: style: The function 'RewriteEntry' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:50:17: note: Virtual function in base class
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) = 0;
+                ^
+apt-pkg/indexcopy.h:83:17: note: Function in derived class
+   virtual bool RewriteEntry(FileFd &Target, std::string const &File) APT_OVERRIDE;
+                ^
+apt-pkg/indexcopy.h:84:24: style: The function 'GetFileName' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual const char *GetFileName() APT_OVERRIDE {return "Sources";};
+                       ^
+apt-pkg/indexcopy.h:51:24: note: Virtual function in base class
+   virtual const char *GetFileName() = 0;
+                       ^
+apt-pkg/indexcopy.h:84:24: note: Function in derived class
+   virtual const char *GetFileName() APT_OVERRIDE {return "Sources";};
+                       ^
+apt-pkg/indexcopy.h:85:24: style: The function 'Type' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual const char *Type() APT_OVERRIDE {return "Source";};
+                       ^
+apt-pkg/indexcopy.h:52:24: note: Virtual function in base class
+   virtual const char *Type() = 0;
+                       ^
+apt-pkg/indexcopy.h:85:24: note: Function in derived class
+   virtual const char *Type() APT_OVERRIDE {return "Source";};
+                       ^
+apt-pkg/indexcopy.cc:605:37: style: Local variable 'I' shadows outer variable [shadowVariable]
+      for (vector<string>::iterator I = keys.begin(); I != keys.end(); ++I)
+                                    ^
+apt-pkg/indexcopy.cc:548:34: note: Shadowed declaration
+   for (vector<string>::iterator I = SigList.begin(); I != SigList.end(); ++I)
+                                 ^
+apt-pkg/indexcopy.cc:605:37: note: Shadow variable
+      for (vector<string>::iterator I = keys.begin(); I != keys.end(); ++I)
+                                    ^
+apt-pkg/indexcopy.cc:271:57: performance: Function parameter 'OrigPath' should be passed by const reference. [passedByValue]
+bool IndexCopy::ReconstructPrefix(string &Prefix,string OrigPath,string CD,
+                                                        ^
+apt-pkg/indexcopy.cc:271:73: performance: Function parameter 'CD' should be passed by const reference. [passedByValue]
+bool IndexCopy::ReconstructPrefix(string &Prefix,string OrigPath,string CD,
+                                                                        ^
+apt-pkg/indexcopy.cc:272:14: performance: Function parameter 'File' should be passed by const reference. [passedByValue]
+      string File)
+             ^
+apt-pkg/indexcopy.cc:302:60: performance: Function parameter 'Dir' should be passed by const reference. [passedByValue]
+bool IndexCopy::ReconstructChop(unsigned long &Chop,string Dir,string File)
+                                                           ^
+apt-pkg/indexcopy.cc:480:31: performance: Function parameter 'prefix' should be passed by const reference. [passedByValue]
+bool SigVerify::Verify(string prefix, string file, metaIndex *MetaIndex)
+                              ^
+apt-pkg/indexcopy.cc:539:38: performance: Function parameter 'CDROM' should be passed by const reference. [passedByValue]
+bool SigVerify::CopyAndVerify(string CDROM,string Name,vector<string> &SigList, /*{{{*/
+                                     ^
+apt-pkg/indexcopy.cc:539:51: performance: Function parameter 'Name' should be passed by const reference. [passedByValue]
+bool SigVerify::CopyAndVerify(string CDROM,string Name,vector<string> &SigList, /*{{{*/
+                                                  ^
+apt-pkg/indexfile.cc:114:1: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-pkg/init.cc:248:0: information: Skipping configuration 'APT_DOMAIN' since the value of 'APT_DOMAIN' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      bindtextdomain(APT_DOMAIN,Cnf.FindDir("Dir::Locale").c_str());
+^
+apt-pkg/orderlist.cc:1008:26: style: Variable 'visitReplacement' is reassigned a value before the old one has been used. [redundantAssignment]
+        visitReplacement = false;
+                         ^
+apt-pkg/orderlist.cc:996:26: note: visitReplacement is assigned
+        visitReplacement = true;
+                         ^
+apt-pkg/orderlist.cc:1008:26: note: visitReplacement is overwritten
+        visitReplacement = false;
+                         ^
+apt-pkg/orderlist.cc:614:7: style: Variable 'Res' is assigned a value that is never used. [unreadVariable]
+  Res &= Res && VisitRProvides(Secondary,Cache[Pkg].InstVerIter(Cache));
+      ^
+apt-pkg/orderlist.cc:620:7: style: Variable 'Res' is assigned a value that is never used. [unreadVariable]
+  Res &= Res && VisitRProvides(Remove,Pkg.CurrentVer());
+      ^
+apt-pkg/pkgcachegen.cc:1744:24: style: Variable 'srcpkgcache_fine' is assigned a value that is never used. [unreadVariable]
+      srcpkgcache_fine = true;
+                       ^
+apt-pkg/sourcelist.cc:621:9: warning: Return value of function std::remove_if() is not used. [ignoredReturnValue]
+   std::remove_if(CmdL.FileList + 1, CmdL.FileList + 1 + CmdL.FileSize(), [&](char const * const I) {
+        ^
+apt-pkg/sourcelist.cc:635:9: warning: Return value of function std::remove_if() is not used. [ignoredReturnValue]
+   std::remove_if(CmdL.FileList + 1, CmdL.FileList + 1 + CmdL.FileSize(), [&](char const * const I) {
+        ^
+apt-pkg/sourcelist.cc:621:4: warning: Return value of std::remove_if() ignored. Elements remain in container. [uselessCallsRemove]
+   std::remove_if(CmdL.FileList + 1, CmdL.FileList + 1 + CmdL.FileSize(), [&](char const * const I) {
+   ^
+apt-pkg/sourcelist.cc:635:4: warning: Return value of std::remove_if() ignored. Elements remain in container. [uselessCallsRemove]
+   std::remove_if(CmdL.FileList + 1, CmdL.FileList + 1 + CmdL.FileSize(), [&](char const * const I) {
+   ^
+apt-pkg/tagfile.cc:539:34: portability: Assigning an integer to a pointer is not portable. [AssignmentIntegerToAddress]
+        BetaIndexes[lastTagHash] = TagCount;
+                                 ^
+apt-pkg/upgrade.cc:299:1: error: There is an unknown macro here somewhere. Configuration is required. If APT_IGNORE_DEPRECATED_POP is a macro then please configure it. [unknownMacro]
+APT_IGNORE_DEPRECATED_POP
+^
+apt-private/private-cacheset.cc:230:28: style: Local variable 'Pkg' shadows outer variable [shadowVariable]
+     pkgCache::PkgIterator Pkg = I.OwnerPkg();
+                           ^
+apt-private/private-cacheset.cc:221:41: note: Shadowed declaration
+   for (APT::PackageSet::const_iterator Pkg = virtualPkgs.begin();
+                                        ^
+apt-private/private-cacheset.cc:230:28: note: Shadow variable
+     pkgCache::PkgIterator Pkg = I.OwnerPkg();
+                           ^
+apt-private/private-cmndline.cc:48:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("depends", "rdepends", "xvcg", "dotty"))
+       ^
+apt-private/private-cmndline.cc:63:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("search"))
+            ^
+apt-private/private-cmndline.cc:68:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("show"))
+            ^
+apt-private/private-cmndline.cc:72:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("pkgnames"))
+            ^
+apt-private/private-cmndline.cc:76:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("unmet"))
+            ^
+apt-private/private-cmndline.cc:80:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("showsrc"))
+            ^
+apt-private/private-cmndline.cc:84:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("gencaches", "showpkg", "stats", "dump",
+            ^
+apt-private/private-cmndline.cc:106:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("add", "ident") == false)
+       ^
+apt-private/private-cmndline.cc:124:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("dump"))
+       ^
+apt-private/private-cmndline.cc:129:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("shell"))
+            ^
+apt-private/private-cmndline.cc:176:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("cat-file"))
+       ^
+apt-private/private-cmndline.cc:185:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("install", "remove", "purge", "upgrade", "dist-upgrade",
+       ^
+apt-private/private-cmndline.cc:197:11: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+      if (CmdMatches("upgrade"))
+          ^
+apt-private/private-cmndline.cc:203:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("update"))
+            ^
+apt-private/private-cmndline.cc:207:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("source"))
+            ^
+apt-private/private-cmndline.cc:217:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("build-dep"))
+            ^
+apt-private/private-cmndline.cc:229:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("indextargets"))
+            ^
+apt-private/private-cmndline.cc:234:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("clean", "autoclean", "auto-clean", "check", "download", "changelog") ||
+            ^
+apt-private/private-cmndline.cc:235:6: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+     CmdMatches("markauto", "unmarkauto")) // deprecated commands
+     ^
+apt-private/private-cmndline.cc:237:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("moo"))
+            ^
+apt-private/private-cmndline.cc:240:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("install", "remove", "purge", "upgrade", "dist-upgrade",
+       ^
+apt-private/private-cmndline.cc:288:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("auto", "manual", "hold", "unhold", "showauto",
+       ^
+apt-private/private-cmndline.cc:294:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("install", "remove", "deinstall", "purge",
+            ^
+apt-private/private-cmndline.cc:301:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("markauto", "unmarkauto"))
+       ^
+apt-private/private-cmndline.cc:327:8: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (CmdMatches("list"))
+       ^
+apt-private/private-cmndline.cc:336:13: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   else if (CmdMatches("show"))
+            ^
+apt-private/private-cmndline.cc:475:31: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if (binary == "apt-get" && CmdMatches("update"))
+                              ^
+apt-private/private-cmndline.cc:477:52: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+   if ((binary == "apt" || binary == "apt-get") && CmdMatches("upgrade", "dist-upgrade", "full-upgrade"))
+                                                   ^
+apt-private/private-cmndline.cc:512:12: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+      Cmds.push_back({cmd.Match, cmd.Handler});
+           ^
+apt-private/private-depends.cc:26:38: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool ShowDepends(CommandLine &CmdL, bool const RevDepends)
+                                     ^
+apt-private/private-download.cc:172:30: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool DoDownload(CommandLine &CmdL)
+                             ^
+apt-private/private-download.cc:241:31: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool DoChangelog(CommandLine &CmdL)
+                              ^
+apt-private/private-download.cc:130:31: style: Variable 'RAMFS_MAGIC' is assigned a value that is never used. [unreadVariable]
+   uint32_t const RAMFS_MAGIC = 0x858458f6;
+                              ^
+apt-private/private-install.cc:208:19: style: Local variable 'PM' shadows outer variable [shadowVariable]
+      pkgSimulate PM(Cache);
+                  ^
+apt-private/private-install.cc:134:39: note: Shadowed declaration
+   std::unique_ptr<pkgPackageManager> PM(_system->CreatePM(Cache));
+                                      ^
+apt-private/private-install.cc:208:19: note: Shadow variable
+      pkgSimulate PM(Cache);
+                  ^
+apt-private/private-install.cc:536:25: style: Local variable 'Universe' shadows outer variable [shadowVariable]
+  SortedPackageUniverse Universe(Cache);
+                        ^
+apt-private/private-install.cc:424:26: note: Shadowed declaration
+   SortedPackageUniverse Universe(Cache);
+                         ^
+apt-private/private-install.cc:536:25: note: Shadow variable
+  SortedPackageUniverse Universe(Cache);
+                        ^
+apt-private/private-install.cc:574:86: style: Parameter 'VolatileCmdL' can be declared with const [constParameter]
+bool DoCacheManipulationFromCommandLine(CommandLine &CmdL, std::vector<std::string> &VolatileCmdL, CacheFile &Cache,
+                                                                                     ^
+apt-private/private-list.cc:93:26: style: Parameter 'Cmd' can be declared with const [constParameter]
+bool DoList(CommandLine &Cmd)
+                         ^
+apt-private/private-output.cc:124:17: style: Variable 'flags_str' is reassigned a value before the old one has been used. [redundantAssignment]
+      flags_str = "g";
+                ^
+apt-private/private-output.cc:122:17: note: flags_str is assigned
+      flags_str = "B";
+                ^
+apt-private/private-output.cc:124:17: note: flags_str is overwritten
+      flags_str = "g";
+                ^
+apt-private/private-output.cc:396:28: style: Local variable 'Ver' shadows outer variable [shadowVariable]
+     pkgCache::VerIterator Ver = (*Cache)[Targ].InstVerIter(*Cache);
+                           ^
+apt-private/private-output.cc:333:26: note: Shadowed declaration
+   pkgCache::VerIterator Ver;
+                         ^
+apt-private/private-output.cc:396:28: note: Shadow variable
+     pkgCache::VerIterator Ver = (*Cache)[Targ].InstVerIter(*Cache);
+                           ^
+apt-private/private-output.cc:52:0: information: Skipping configuration 'TIOCGWINSZ' since the value of 'TIOCGWINSZ' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (ioctl(1, TIOCGWINSZ, &ws) != -1 && ws.ws_col >= 5)
+^
+apt-private/private-search.cc:258:25: style: Local variable 'V' shadows outer variable [shadowVariable]
+  pkgCache::VerIterator V = Plcy->GetCandidateVer(Prv.OwnerPkg());
+                        ^
+apt-private/private-search.cc:240:29: note: Shadowed declaration
+      pkgCache::VerIterator V = Plcy->GetCandidateVer(P);
+                            ^
+apt-private/private-search.cc:258:25: note: Shadow variable
+  pkgCache::VerIterator V = Plcy->GetCandidateVer(Prv.OwnerPkg());
+                        ^
+apt-private/private-show.cc:143:20: style: Local variable 'length' shadows outer variable [shadowVariable]
+      size_t const length = End - Start;
+                   ^
+apt-private/private-show.cc:107:17: note: Shadowed declaration
+   size_t const length = DescP - Buffer;
+                ^
+apt-private/private-show.cc:143:20: note: Shadow variable
+      size_t const length = End - Start;
+                   ^
+apt-private/private-show.cc:256:31: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool ShowPackage(CommandLine &CmdL)     /*{{{*/
+                              ^
+apt-private/private-show.cc:313:34: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool ShowSrcPackage(CommandLine &CmdL)     /*{{{*/
+                                 ^
+apt-private/private-show.cc:359:26: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool Policy(CommandLine &CmdL)
+                         ^
+apt-private/private-source.cc:399:62: style: Local variable 'I' shadows outer variable [shadowVariable]
+      for (std::vector<pkgSrcRecords::File2>::const_iterator I = Lst.begin();
+                                                             ^
+apt-private/private-source.cc:348:22: note: Shadowed declaration
+   for (const char **I = CmdL.FileList + 1; *I != 0; I++)
+                     ^
+apt-private/private-source.cc:399:62: note: Shadow variable
+      for (std::vector<pkgSrcRecords::File2>::const_iterator I = Lst.begin();
+                                                             ^
+apt-private/private-sources.cc:34:4: style: Class 'ScopedGetLock' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+   ScopedGetLock(std::string const &filename) : fd(GetLock(filename)) {}
+   ^
+apt-private/private-sources.cc:37:31: style: Parameter 'CmdL' can be declared with const [constParameter]
+bool EditSources(CommandLine &CmdL)
+                              ^
+apt-private/private-utils.cc:38:7: error: Using pointer to local variable 'pager' that is out of scope. [invalidLifetime]
+      Args[0] = "cat";
+      ^
+apt-private/private-utils.cc:27:13: note: Pointer to container is created here.
+  Args[0] = pager.c_str();
+            ^
+apt-private/private-utils.cc:25:21: note: Variable created here.
+  std::string const pager = _config->Find("Dir::Bin::Pager",
+                    ^
+apt-private/private-utils.cc:38:7: note: Using pointer to local variable 'pager' that is out of scope.
+      Args[0] = "cat";
+      ^
+apt-private/private-utils.cc:39:14: error: Using pointer to local variable 'pager' that is out of scope. [invalidLifetime]
+      execvp(Args[0],(char **)Args);
+             ^
+apt-private/private-utils.cc:27:13: note: Pointer to container is created here.
+  Args[0] = pager.c_str();
+            ^
+apt-private/private-utils.cc:25:21: note: Variable created here.
+  std::string const pager = _config->Find("Dir::Bin::Pager",
+                    ^
+apt-private/private-utils.cc:39:14: note: Using pointer to local variable 'pager' that is out of scope.
+      execvp(Args[0],(char **)Args);
+             ^
+cmdline/apt-cache.cc:316:13: style: Local variable 'I' shadows outer variable [shadowVariable]
+   for (int I = 0; I != 7; I++)
+            ^
+cmdline/apt-cache.cc:207:26: note: Shadowed declaration
+   pkgCache::PkgIterator I = Cache->PkgBegin();
+                         ^
+cmdline/apt-cache.cc:316:13: note: Shadow variable
+   for (int I = 0; I != 7; I++)
+            ^
+cmdline/apt-cache.cc:143:44: performance: Function parameter 'Type' should be passed by const reference. [passedByValue]
+static void ShowHashTableStats(std::string Type,
+                                           ^
+cmdline/apt-cache.cc:75:38: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool DumpPackage(CommandLine &CmdL)
+                                     ^
+cmdline/apt-cache.cc:545:31: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool XVcg(CommandLine &CmdL)
+                              ^
+cmdline/apt-cache.cc:757:32: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool Dotty(CommandLine &CmdL)
+                               ^
+cmdline/apt-cache.cc:984:39: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool ShowPkgNames(CommandLine &CmdL)
+                                      ^
+cmdline/apt-cache.cc:1023:34: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool Madison(CommandLine &CmdL)
+                                 ^
+cmdline/apt-config.cc:45:34: style: Parameter 'CmdL' can be declared with const [constParameter]
+static bool DoShell(CommandLine &CmdL)
+                                 ^
+cmdline/apt-extracttemplates.cc:104:28: style: Parameter 'I' can be declared with const [constParameter]
+bool DebFile::DoItem(Item &I, int &Fd)
+                           ^
+cmdline/apt-extracttemplates.cc:343:18: style: Variable 'Cmds' is assigned a value that is never used. [unreadVariable]
+ auto const Cmds = ParseCommandLine(CmdL, APT_CMD::APT_EXTRACTTEMPLATES, &_config, &_system, argc, argv, &ShowHelp, &GetCommands);
+                 ^
+cmdline/apt-get.cc:191:30: style: Local variable 'I' shadows outer variable [shadowVariable]
+  for (pkgCache::PkgIterator I = Cache->PkgBegin(); I.end() == false; ++I)
+                             ^
+cmdline/apt-get.cc:154:26: note: Shadowed declaration
+   pkgCache::PkgIterator I = Cache->PkgBegin();
+                         ^
+cmdline/apt-get.cc:191:30: note: Shadow variable
+  for (pkgCache::PkgIterator I = Cache->PkgBegin(); I.end() == false; ++I)
+                             ^
+cmdline/apt-helper.cc:112:138: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+static const APT::Configuration::Compressor *FindCompressor(std::vector<APT::Configuration::Compressor> const & compressors, std::string name)    /*{{{*/
+                                                                                                                                         ^
+cmdline/apt-internal-solver.cc:71:19: style: Unused variable: action [unusedVariable]
+      std::string action;
+                  ^
+ftparchive/writer.h:124:17: style: The function 'DoPackage' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/writer.h:74:17: note: Virtual function in base class
+   virtual bool DoPackage(string FileName) = 0;
+                ^
+ftparchive/writer.h:124:17: note: Function in derived class
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/writer.h:147:17: style: The function 'DoPackage' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool DoPackage(string FileName) APT_OVERRIDE
+                ^
+ftparchive/writer.h:74:17: note: Virtual function in base class
+   virtual bool DoPackage(string FileName) = 0;
+                ^
+ftparchive/writer.h:147:17: note: Function in derived class
+   virtual bool DoPackage(string FileName) APT_OVERRIDE
+                ^
+ftparchive/writer.h:177:17: style: The function 'DoPackage' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/writer.h:74:17: note: Virtual function in base class
+   virtual bool DoPackage(string FileName) = 0;
+                ^
+ftparchive/writer.h:177:17: note: Function in derived class
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/writer.h:188:17: style: The function 'DoPackage' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/writer.h:74:17: note: Virtual function in base class
+   virtual bool DoPackage(string FileName) = 0;
+                ^
+ftparchive/writer.h:188:17: note: Function in derived class
+   virtual bool DoPackage(string FileName) APT_OVERRIDE;
+                ^
+ftparchive/apt-ftparchive.cc:220:20: style: Variable 'Packages.Output' is assigned a value that is never used. [unreadVariable]
+   Packages.Output = 0;      // Just in case
+                   ^
+ftparchive/apt-ftparchive.cc:308:19: style: Variable 'Sources.Output' is assigned a value that is never used. [unreadVariable]
+   Sources.Output = 0;      // Just in case
+                  ^
+ftparchive/cachedb.cc:37:10: warning: Member variable 'CacheDB::CurStatOldFormat' is not initialized in the constructor. [uninitMemberVar]
+CacheDB::CacheDB(std::string const &DB)
+         ^
+ftparchive/cachedb.cc:37:10: warning: Member variable 'CacheDB::CurStat' is not initialized in the constructor. [uninitMemberVar]
+CacheDB::CacheDB(std::string const &DB)
+         ^
+ftparchive/cachedb.cc:37:10: warning: Member variable 'CacheDB::OldStat' is not initialized in the constructor. [uninitMemberVar]
+CacheDB::CacheDB(std::string const &DB)
+         ^
+ftparchive/cachedb.cc:37:10: warning: Member variable 'CacheDB::Stats' is not initialized in the constructor. [uninitMemberVar]
+CacheDB::CacheDB(std::string const &DB)
+         ^
+ftparchive/contents.cc:208:23: style: Redundant condition: If 'EXPR == '/'', the comparison 'EXPR != 0' is always true. [redundantCondition]
+   while (*Dir == '/' && *Dir != 0)
+                      ^
+ftparchive/contents.cc:382:13: style: Local variable 'NewData' shadows outer argument [shadowArgument]
+      char *NewData = (char *)realloc(Data,MaxSize*2);
+            ^
+ftparchive/contents.cc:366:48: note: Shadowed declaration
+bool ContentsExtract::TakeContents(const void *NewData,unsigned long long Length)
+                                               ^
+ftparchive/contents.cc:382:13: note: Shadow variable
+      char *NewData = (char *)realloc(Data,MaxSize*2);
+            ^
+ftparchive/multicompress.cc:48:4: performance: Variable 'Outputter' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+   Outputter = -1;
+   ^
+ftparchive/multicompress.cc:95:16: style: Local variable 'I' shadows outer variable [shadowVariable]
+   for (Files *I = Outputs; I != 0; I = I->Next)
+               ^
+ftparchive/multicompress.cc:53:27: note: Shadowed declaration
+   string::const_iterator I = Compress.begin();
+                          ^
+ftparchive/multicompress.cc:95:16: note: Shadow variable
+   for (Files *I = Outputs; I != 0; I = I->Next)
+               ^
+ftparchive/writer.cc:665:9: style: The scope of the variable 'Buffer' can be reduced. [variableScope]
+   char Buffer[Bins.length() + 1];
+        ^
+methods/basehttp.h:62:4: warning: Member variable 'RequestState::Code' is not initialized in the constructor. [uninitMemberVar]
+   RequestState(BaseHttpMethod * const Owner, ServerState * const Server) :
+   ^
+methods/basehttp.h:98:17: warning: Virtual function 'Reset' is called from constructor 'ServerState(URI Srv,BaseHttpMethod*Owner)' at line 253. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual void Reset();
+                ^
+methods/basehttp.cc:253:4: note: Calling Reset
+   Reset();
+   ^
+methods/basehttp.h:98:17: note: Reset is a virtual function
+   virtual void Reset();
+                ^
+methods/basehttp.h:165:17: style: The function 'Configuration' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/aptmethod.h:31:17: note: Virtual function in base class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE
+                ^
+methods/basehttp.h:165:17: note: Function in derived class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/basehttp.cc:652:11: style: Local variable 'Result' shadows outer variable [shadowVariable]
+     bool Result = true;
+          ^
+methods/basehttp.cc:557:11: note: Shadowed declaration
+      int Result = Run(true);
+          ^
+methods/basehttp.cc:652:11: note: Shadow variable
+     bool Result = true;
+          ^
+methods/basehttp.cc:342:27: style: Variable 'tmpAccess' is assigned a value that is never used. [unreadVariable]
+    std::string tmpAccess = Uri.Access;
+                          ^
+methods/cdrom.cc:80:34: performance: Function parameter 'Name' should be passed by const reference. [passedByValue]
+string CDROMMethod::GetID(string Name)
+                                 ^
+methods/connect.cc:187:0: information: Skipping configuration 'AI_IDN' since the value of 'AI_IDN' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  Hints.ai_flags |= AI_IDN;
+^
+methods/connect.cc:214:0: information: Skipping configuration 'AI_PASSIVE;EAI_NONAME' since the value of 'EAI_NONAME' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+     if (Res == EAI_NONAME || Res == EAI_SERVICE)
+^
+methods/connect.cc:93:0: information: Skipping configuration 'NI_NUMERICHOST' since the value of 'NI_NUMERICHOST' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        NI_NUMERICHOST|NI_NUMERICSERV);
+^
+methods/file.cc:58:31: style: Variable 'hsl' is assigned a value that is never used. [unreadVariable]
+     HashStringList const hsl = Itm->ExpectedHashes;
+                              ^
+methods/ftp.cc:1084:16: warning: Return value of function FailFile.c_str() is not used. [ignoredReturnValue]
+      FailFile.c_str();   // Make sure we don't do a malloc in the signal handler
+               ^
+methods/ftp.h:77:17: style: The function 'Configuration' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/aptmethod.h:31:17: note: Virtual function in base class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE
+                ^
+methods/ftp.h:77:17: note: Function in derived class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/ftp.cc:1135:11: style: Local variable 'Proxy' shadows outer variable [shadowVariable]
+      URI Proxy = string(getenv("ftp_proxy"));
+          ^
+methods/ftp.cc:68:5: note: Shadowed declaration
+URI Proxy;
+    ^
+methods/ftp.cc:1135:11: note: Shadow variable
+      URI Proxy = string(getenv("ftp_proxy"));
+          ^
+methods/ftp.cc:64:0: information: Skipping configuration 'AF_INET6' since the value of 'AF_INET6' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+struct AFMap AFMap[] = {{AF_INET,1},{AF_INET6,2},{0, 0}};
+^
+methods/ftp.cc:746:0: information: Skipping configuration 'AI_PASSIVE;EAI_NONAME' since the value of 'AI_PASSIVE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   Hints.ai_flags |= AI_PASSIVE;
+^
+methods/ftp.cc:530:0: information: Skipping configuration 'NI_NUMERICHOST' since the value of 'NI_NUMERICHOST' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    NI_NUMERICHOST|NI_NUMERICSERV);
+^
+methods/ftp.cc:628:0: information: Skipping configuration 'NI_NUMERICHOST' since the value of 'NI_NUMERICHOST' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    NI_NUMERICHOST|NI_NUMERICSERV);
+^
+methods/ftp.cc:783:0: information: Skipping configuration 'NI_NUMERICHOST' since the value of 'NI_NUMERICHOST' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        NI_NUMERICHOST|NI_NUMERICSERV);
+^
+methods/ftp.cc:786:0: information: Skipping configuration 'NI_NUMERICHOST' since the value of 'NI_NUMERICHOST' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        NI_NUMERICHOST|NI_NUMERICSERV);
+^
+methods/http.cc:989:13: warning: Return value of function FailFile.c_str() is not used. [ignoredReturnValue]
+   FailFile.c_str();   // Make sure we don't do a malloc in the signal handler
+            ^
+methods/http.cc:70:4: warning: Class 'CircleBuf' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+   Buf = new unsigned char[Size];
+   ^
+methods/http.cc:70:4: warning: Class 'CircleBuf' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+   Buf = new unsigned char[Size];
+   ^
+methods/http.h:113:17: warning: Virtual function 'Close' is called from destructor '~HttpServerState()' at line 121. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool Close() APT_OVERRIDE;
+                ^
+methods/http.h:121:32: note: Calling Close
+   virtual ~HttpServerState() {Close();};
+                               ^
+methods/http.h:113:17: note: Close is a virtual function
+   virtual bool Close() APT_OVERRIDE;
+                ^
+methods/http.h:106:17: warning: Virtual function 'Reset' is called from constructor 'HttpServerState(URI Srv,HttpMethod*Owner)' at line 294. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual void Reset() APT_OVERRIDE;
+                ^
+methods/http.cc:294:4: note: Calling Reset
+   Reset();
+   ^
+methods/http.h:106:17: note: Reset is a virtual function
+   virtual void Reset() APT_OVERRIDE;
+                ^
+methods/http.h:101:17: style: The function 'ReadHeaderLines' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool ReadHeaderLines(std::string &Data) APT_OVERRIDE;
+                ^
+methods/basehttp.h:80:17: note: Virtual function in base class
+   virtual bool ReadHeaderLines(std::string &Data) = 0;
+                ^
+methods/http.h:101:17: note: Function in derived class
+   virtual bool ReadHeaderLines(std::string &Data) APT_OVERRIDE;
+                ^
+methods/http.h:102:17: style: The function 'LoadNextResponse' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool LoadNextResponse(bool const ToFile, RequestState &Req) APT_OVERRIDE;
+                ^
+methods/basehttp.h:81:17: note: Virtual function in base class
+   virtual bool LoadNextResponse(bool const ToFile, RequestState &Req) = 0;
+                ^
+methods/http.h:102:17: note: Function in derived class
+   virtual bool LoadNextResponse(bool const ToFile, RequestState &Req) APT_OVERRIDE;
+                ^
+methods/http.h:103:17: style: The function 'WriteResponse' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool WriteResponse(std::string const &Data) APT_OVERRIDE;
+                ^
+methods/basehttp.h:99:17: note: Virtual function in base class
+   virtual bool WriteResponse(std::string const &Data) = 0;
+                ^
+methods/http.h:103:17: note: Function in derived class
+   virtual bool WriteResponse(std::string const &Data) APT_OVERRIDE;
+                ^
+methods/http.h:106:17: style: The function 'Reset' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void Reset() APT_OVERRIDE;
+                ^
+methods/basehttp.h:98:17: note: Virtual function in base class
+   virtual void Reset();
+                ^
+methods/http.h:106:17: note: Function in derived class
+   virtual void Reset() APT_OVERRIDE;
+                ^
+methods/http.h:108:17: style: The function 'RunData' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RunData(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/basehttp.h:102:17: note: Virtual function in base class
+   virtual bool RunData(RequestState &Req) = 0;
+                ^
+methods/http.h:108:17: note: Function in derived class
+   virtual bool RunData(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/http.h:109:17: style: The function 'RunDataToDevNull' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RunDataToDevNull(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/basehttp.h:103:17: note: Virtual function in base class
+   virtual bool RunDataToDevNull(RequestState &Req) = 0;
+                ^
+methods/http.h:109:17: note: Function in derived class
+   virtual bool RunDataToDevNull(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/http.h:111:17: style: The function 'Open' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Open() APT_OVERRIDE;
+                ^
+methods/basehttp.h:105:17: note: Virtual function in base class
+   virtual bool Open() = 0;
+                ^
+methods/http.h:111:17: note: Function in derived class
+   virtual bool Open() APT_OVERRIDE;
+                ^
+methods/http.h:112:17: style: The function 'IsOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool IsOpen() APT_OVERRIDE;
+                ^
+methods/basehttp.h:106:17: note: Virtual function in base class
+   virtual bool IsOpen() = 0;
+                ^
+methods/http.h:112:17: note: Function in derived class
+   virtual bool IsOpen() APT_OVERRIDE;
+                ^
+methods/http.h:113:17: style: The function 'Close' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Close() APT_OVERRIDE;
+                ^
+methods/basehttp.h:107:17: note: Virtual function in base class
+   virtual bool Close() = 0;
+                ^
+methods/http.h:113:17: note: Function in derived class
+   virtual bool Close() APT_OVERRIDE;
+                ^
+methods/http.h:114:17: style: The function 'InitHashes' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) APT_OVERRIDE;
+                ^
+methods/basehttp.h:108:17: note: Virtual function in base class
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) = 0;
+                ^
+methods/http.h:114:17: note: Function in derived class
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) APT_OVERRIDE;
+                ^
+methods/http.h:115:21: style: The function 'GetHashes' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual Hashes * GetHashes() APT_OVERRIDE;
+                    ^
+methods/basehttp.h:112:21: note: Virtual function in base class
+   virtual Hashes * GetHashes() = 0;
+                    ^
+methods/http.h:115:21: note: Function in derived class
+   virtual Hashes * GetHashes() APT_OVERRIDE;
+                    ^
+methods/http.h:116:17: style: The function 'Die' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Die(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/basehttp.h:109:17: note: Virtual function in base class
+   virtual bool Die(RequestState &Req) = 0;
+                ^
+methods/http.h:116:17: note: Function in derived class
+   virtual bool Die(RequestState &Req) APT_OVERRIDE;
+                ^
+methods/http.h:117:17: style: The function 'Flush' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Flush(FileFd * const File) APT_OVERRIDE;
+                ^
+methods/basehttp.h:110:17: note: Virtual function in base class
+   virtual bool Flush(FileFd * const File) = 0;
+                ^
+methods/http.h:117:17: note: Function in derived class
+   virtual bool Flush(FileFd * const File) APT_OVERRIDE;
+                ^
+methods/http.h:118:17: style: The function 'Go' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Go(bool ToFile, RequestState &Req) APT_OVERRIDE;
+                ^
+methods/basehttp.h:111:17: note: Virtual function in base class
+   virtual bool Go(bool ToFile, RequestState &Req) = 0;
+                ^
+methods/http.h:118:17: note: Function in derived class
+   virtual bool Go(bool ToFile, RequestState &Req) APT_OVERRIDE;
+                ^
+methods/http.h:127:17: style: The function 'SendReq' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void SendReq(FetchItem *Itm) APT_OVERRIDE;
+                ^
+methods/basehttp.h:162:17: note: Virtual function in base class
+   virtual void SendReq(FetchItem *Itm) = 0;
+                ^
+methods/http.h:127:17: note: Function in derived class
+   virtual void SendReq(FetchItem *Itm) APT_OVERRIDE;
+                ^
+methods/http.h:129:41: style: The function 'CreateServerState' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) APT_OVERRIDE;
+                                        ^
+methods/basehttp.h:163:41: note: Virtual function in base class
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) = 0;
+                                        ^
+methods/http.h:129:41: note: Function in derived class
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) APT_OVERRIDE;
+                                        ^
+methods/http.h:130:17: style: The function 'RotateDNS' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void RotateDNS() APT_OVERRIDE;
+                ^
+methods/basehttp.h:164:17: note: Virtual function in base class
+   virtual void RotateDNS() = 0;
+                ^
+methods/http.h:130:17: note: Function in derived class
+   virtual void RotateDNS() APT_OVERRIDE;
+                ^
+methods/http.h:131:34: style: The function 'DealWithHeaders' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual DealWithHeadersResult DealWithHeaders(FetchResult &Res, RequestState &Req) APT_OVERRIDE;
+                                 ^
+methods/basehttp.h:152:34: note: Virtual function in base class
+   virtual DealWithHeadersResult DealWithHeaders(FetchResult &Res, RequestState &Req);
+                                 ^
+methods/http.h:131:34: note: Function in derived class
+   virtual DealWithHeadersResult DealWithHeaders(FetchResult &Res, RequestState &Req) APT_OVERRIDE;
+                                 ^
+methods/http.cc:594:19: style: Variable 'Last' is reassigned a value before the old one has been used. [redundantAssignment]
+     while ((Last = Go(false, Req)) == true);
+                  ^
+methods/http.cc:588:11: note: Last is assigned
+     Last = true;
+          ^
+methods/http.cc:594:19: note: Last is overwritten
+     while ((Last = Go(false, Req)) == true);
+                  ^
+methods/http.cc:618:16: style: Variable 'Last' is reassigned a value before the old one has been used. [redundantAssignment]
+  while ((Last = Go(false, Req)) == true);
+               ^
+methods/http.cc:612:8: note: Last is assigned
+  Last = true;
+       ^
+methods/http.cc:618:16: note: Last is overwritten
+  while ((Last = Go(false, Req)) == true);
+               ^
+methods/http.cc:1007:17: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+   auto addName = std::inserter(methodNames, methodNames.begin());
+                ^
+methods/http.cc:1009:15: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+      addName = "http";
+              ^
+methods/http.cc:1012:15: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+      addName = Binary.substr(0, plus);
+              ^
+methods/https.h:46:17: warning: Virtual function 'Close' is called from destructor '~HttpsServerState()' at line 54. Dynamic binding is not used. [virtualCallInConstructor]
+   virtual bool Close() APT_OVERRIDE { return false; }
+                ^
+methods/https.h:54:33: note: Calling Close
+   virtual ~HttpsServerState() {Close();};
+                                ^
+methods/https.h:46:17: note: Close is a virtual function
+   virtual bool Close() APT_OVERRIDE { return false; }
+                ^
+methods/https.h:34:17: style: The function 'ReadHeaderLines' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool ReadHeaderLines(std::string &/*Data*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:80:17: note: Virtual function in base class
+   virtual bool ReadHeaderLines(std::string &Data) = 0;
+                ^
+methods/https.h:34:17: note: Function in derived class
+   virtual bool ReadHeaderLines(std::string &/*Data*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:35:17: style: The function 'LoadNextResponse' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool LoadNextResponse(bool const /*ToFile*/, RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:81:17: note: Virtual function in base class
+   virtual bool LoadNextResponse(bool const ToFile, RequestState &Req) = 0;
+                ^
+methods/https.h:35:17: note: Function in derived class
+   virtual bool LoadNextResponse(bool const /*ToFile*/, RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:38:17: style: The function 'WriteResponse' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool WriteResponse(std::string const &/*Data*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:99:17: note: Virtual function in base class
+   virtual bool WriteResponse(std::string const &Data) = 0;
+                ^
+methods/https.h:38:17: note: Function in derived class
+   virtual bool WriteResponse(std::string const &/*Data*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:41:17: style: The function 'RunData' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RunData(RequestState &) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:102:17: note: Virtual function in base class
+   virtual bool RunData(RequestState &Req) = 0;
+                ^
+methods/https.h:41:17: note: Function in derived class
+   virtual bool RunData(RequestState &) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:42:17: style: The function 'RunDataToDevNull' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool RunDataToDevNull(RequestState &) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:103:17: note: Virtual function in base class
+   virtual bool RunDataToDevNull(RequestState &Req) = 0;
+                ^
+methods/https.h:42:17: note: Function in derived class
+   virtual bool RunDataToDevNull(RequestState &) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:44:17: style: The function 'Open' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Open() APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:105:17: note: Virtual function in base class
+   virtual bool Open() = 0;
+                ^
+methods/https.h:44:17: note: Function in derived class
+   virtual bool Open() APT_OVERRIDE { return false; }
+                ^
+methods/https.h:45:17: style: The function 'IsOpen' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool IsOpen() APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:106:17: note: Virtual function in base class
+   virtual bool IsOpen() = 0;
+                ^
+methods/https.h:45:17: note: Function in derived class
+   virtual bool IsOpen() APT_OVERRIDE { return false; }
+                ^
+methods/https.h:46:17: style: The function 'Close' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Close() APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:107:17: note: Virtual function in base class
+   virtual bool Close() = 0;
+                ^
+methods/https.h:46:17: note: Function in derived class
+   virtual bool Close() APT_OVERRIDE { return false; }
+                ^
+methods/https.h:47:17: style: The function 'InitHashes' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) APT_OVERRIDE;
+                ^
+methods/basehttp.h:108:17: note: Virtual function in base class
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) = 0;
+                ^
+methods/https.h:47:17: note: Function in derived class
+   virtual bool InitHashes(HashStringList const &ExpectedHashes) APT_OVERRIDE;
+                ^
+methods/https.h:48:21: style: The function 'GetHashes' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual Hashes * GetHashes() APT_OVERRIDE;
+                    ^
+methods/basehttp.h:112:21: note: Virtual function in base class
+   virtual Hashes * GetHashes() = 0;
+                    ^
+methods/https.h:48:21: note: Function in derived class
+   virtual Hashes * GetHashes() APT_OVERRIDE;
+                    ^
+methods/https.h:49:17: style: The function 'Die' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Die(RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:109:17: note: Virtual function in base class
+   virtual bool Die(RequestState &Req) = 0;
+                ^
+methods/https.h:49:17: note: Function in derived class
+   virtual bool Die(RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:50:17: style: The function 'Flush' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Flush(FileFd * const /*File*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:110:17: note: Virtual function in base class
+   virtual bool Flush(FileFd * const File) = 0;
+                ^
+methods/https.h:50:17: note: Function in derived class
+   virtual bool Flush(FileFd * const /*File*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:51:17: style: The function 'Go' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Go(bool /*ToFile*/, RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/basehttp.h:111:17: note: Virtual function in base class
+   virtual bool Go(bool ToFile, RequestState &Req) = 0;
+                ^
+methods/https.h:51:17: note: Function in derived class
+   virtual bool Go(bool /*ToFile*/, RequestState &/*Req*/) APT_OVERRIDE { return false; }
+                ^
+methods/https.h:62:17: style: The function 'Fetch' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Fetch(FetchItem *) APT_OVERRIDE;
+                ^
+methods/basehttp.h:121:17: note: Virtual function in base class
+   virtual bool Fetch(FetchItem *) APT_OVERRIDE;
+                ^
+methods/https.h:62:17: note: Function in derived class
+   virtual bool Fetch(FetchItem *) APT_OVERRIDE;
+                ^
+methods/https.h:72:17: style: The function 'SendReq' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void SendReq(FetchItem *) APT_OVERRIDE { exit(42); }
+                ^
+methods/basehttp.h:162:17: note: Virtual function in base class
+   virtual void SendReq(FetchItem *Itm) = 0;
+                ^
+methods/https.h:72:17: note: Function in derived class
+   virtual void SendReq(FetchItem *) APT_OVERRIDE { exit(42); }
+                ^
+methods/https.h:73:17: style: The function 'RotateDNS' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual void RotateDNS() APT_OVERRIDE { exit(42); }
+                ^
+methods/basehttp.h:164:17: note: Virtual function in base class
+   virtual void RotateDNS() = 0;
+                ^
+methods/https.h:73:17: note: Function in derived class
+   virtual void RotateDNS() APT_OVERRIDE { exit(42); }
+                ^
+methods/https.h:77:41: style: The function 'CreateServerState' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) APT_OVERRIDE;
+                                        ^
+methods/basehttp.h:163:41: note: Virtual function in base class
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) = 0;
+                                        ^
+methods/https.h:77:41: note: Function in derived class
+   virtual std::unique_ptr<ServerState> CreateServerState(URI const &uri) APT_OVERRIDE;
+                                        ^
+methods/https.cc:520:12: style: Redundant initialization for 'addName'. The initialized value is overwritten before it is read. [redundantInitialization]
+   addName = "http";
+           ^
+methods/https.cc:519:17: note: addName is initialized
+   auto addName = std::inserter(methodNames, methodNames.begin());
+                ^
+methods/https.cc:520:12: note: addName is overwritten
+   addName = "http";
+           ^
+methods/https.cc:520:12: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+   addName = "http";
+           ^
+methods/https.cc:524:15: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+      addName = Binary.substr(plus + 1);
+              ^
+methods/https.cc:527:11: style: Variable 'addName' is assigned a value that is never used. [unreadVariable]
+  addName = base;
+          ^
+methods/mirror.h:49:17: style: The function 'Configuration' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/basehttp.h:165:17: note: Virtual function in base class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/mirror.h:49:17: note: Function in derived class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/mirror.h:53:17: style: The function 'Fetch' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Fetch(FetchItem *Itm) APT_OVERRIDE;
+                ^
+methods/basehttp.h:121:17: note: Virtual function in base class
+   virtual bool Fetch(FetchItem *) APT_OVERRIDE;
+                ^
+methods/mirror.h:53:17: note: Function in derived class
+   virtual bool Fetch(FetchItem *Itm) APT_OVERRIDE;
+                ^
+methods/mirror.cc:103:24: style: Local variable 'Dir' shadows outer argument [shadowArgument]
+   for (struct dirent *Dir = readdir(D); Dir != 0; Dir = readdir(D))
+                       ^
+methods/mirror.cc:78:33: note: Shadowed declaration
+bool MirrorMethod::Clean(string Dir)
+                                ^
+methods/mirror.cc:103:24: note: Shadow variable
+   for (struct dirent *Dir = readdir(D); Dir != 0; Dir = readdir(D))
+                       ^
+methods/mirror.cc:303:11: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+      if (s.find("#") == 0)
+          ^
+methods/rfc2553emu.cc:199:0: information: Skipping configuration 'AI_PASSIVE;EAI_NONAME' since the value of 'EAI_NONAME' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        return EAI_NONAME;
+^
+methods/rfc2553emu.cc:229:0: information: Skipping configuration 'AI_PASSIVE;EAI_NONAME' since the value of 'EAI_NONAME' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        return EAI_NONAME;
+^
+methods/rfc2553emu.cc:120:0: information: Skipping configuration 'IPPROTO_TCP' since the value of 'IPPROTO_TCP' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  (*Result)->ai_protocol = IPPROTO_TCP;
+^
+methods/rred.cc:52:14: warning: Class 'MemBlock' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+      free = start = new char[BLOCK_SIZE];
+             ^
+methods/rred.cc:52:14: warning: Class 'MemBlock' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+      free = start = new char[BLOCK_SIZE];
+             ^
+methods/rsh.cc:505:16: warning: Return value of function FailFile.c_str() is not used. [ignoredReturnValue]
+      FailFile.c_str();   // Make sure we don't do a malloc in the signal handler
+               ^
+methods/rsh.h:62:17: style: The function 'Configuration' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/aptmethod.h:31:17: note: Virtual function in base class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE
+                ^
+methods/rsh.h:62:17: note: Function in derived class
+   virtual bool Configuration(std::string Message) APT_OVERRIDE;
+                ^
+methods/rsh.cc:173:35: performance: Function parameter 'Host' should be passed by const reference. [passedByValue]
+bool RSHConn::Connect(std::string Host, std::string User)
+                                  ^
+methods/rsh.cc:173:53: performance: Function parameter 'User' should be passed by const reference. [passedByValue]
+bool RSHConn::Connect(std::string Host, std::string User)
+                                                    ^
+test/interactive-helper/aptwebserver.cc:467:29: style: Local variable 'headers' shadows outer argument [shadowArgument]
+     std::list<std::string> headers;
+                            ^
+test/interactive-helper/aptwebserver.cc:381:54: note: Shadowed declaration
+      bool &closeConnection, std::list<std::string> &headers)
+                                                     ^
+test/interactive-helper/aptwebserver.cc:467:29: note: Shadow variable
+     std::list<std::string> headers;
+                            ^
+test/interactive-helper/aptwebserver.cc:528:30: style: Local variable 'headers' shadows outer argument [shadowArgument]
+      std::list<std::string> headers;
+                             ^
+test/interactive-helper/aptwebserver.cc:381:54: note: Shadowed declaration
+      bool &closeConnection, std::list<std::string> &headers)
+                                                     ^
+test/interactive-helper/aptwebserver.cc:528:30: note: Shadow variable
+      std::list<std::string> headers;
+                             ^
+test/interactive-helper/libnoprofile.c:17:17: error: va_list 'ap2' was opened but not closed by va_end(). [va_end_missing]
+        return 0;
+                ^
+test/interactive-helper/libnoprofile.c:38:17: error: va_list 'ap2' was opened but not closed by va_end(). [va_end_missing]
+        return 0;
+                ^
+test/interactive-helper/rpmver.cc:25:20: warning: Obsolete function 'alloca' called. [allocaCalled]
+    str1 = (char *)alloca(strlen(a) + 1);
+                   ^
+test/interactive-helper/rpmver.cc:26:20: warning: Obsolete function 'alloca' called. [allocaCalled]
+    str2 = (char *)alloca(strlen(b) + 1);
+                   ^
+test/libapt/acqprogress_test.cc:122:18: style: Variable 'fetchO.Status' is reassigned a value before the old one has been used. [redundantAssignment]
+   fetchO.Status = pkgAcquire::Item::StatError;
+                 ^
+test/libapt/acqprogress_test.cc:118:18: note: fetchO.Status is assigned
+   fetchO.Status = pkgAcquire::Item::StatDone;
+                 ^
+test/libapt/acqprogress_test.cc:122:18: note: fetchO.Status is overwritten
+   fetchO.Status = pkgAcquire::Item::StatError;
+                 ^
+test/libapt/acqprogress_test.cc:130:18: style: Variable 'fetchO.Status' is reassigned a value before the old one has been used. [redundantAssignment]
+   fetchO.Status = pkgAcquire::Item::StatDone;
+                 ^
+test/libapt/acqprogress_test.cc:122:18: note: fetchO.Status is assigned
+   fetchO.Status = pkgAcquire::Item::StatError;
+                 ^
+test/libapt/acqprogress_test.cc:130:18: note: fetchO.Status is overwritten
+   fetchO.Status = pkgAcquire::Item::StatDone;
+                 ^
+test/libapt/acqprogress_test.cc:172:10: style: Variable 'width' is reassigned a value before the old one has been used. [redundantAssignment]
+   width = 80;
+         ^
+test/libapt/acqprogress_test.cc:167:10: note: width is assigned
+   width = 8;
+         ^
+test/libapt/acqprogress_test.cc:172:10: note: width is overwritten
+   width = 80;
+         ^
+test/libapt/commandline_test.cc:72:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-T", "yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:72:17: note: Shadow variable
+   char const * argv[] = { "test", "-T", "yes" };
+                ^
+test/libapt/commandline_test.cc:80:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-T=yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:80:17: note: Shadow variable
+   char const * argv[] = { "test", "-T=yes" };
+                ^
+test/libapt/commandline_test.cc:88:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-T=", "yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:88:17: note: Shadow variable
+   char const * argv[] = { "test", "-T=", "yes" };
+                ^
+test/libapt/commandline_test.cc:97:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "--testing", "yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:97:17: note: Shadow variable
+   char const * argv[] = { "test", "--testing", "yes" };
+                ^
+test/libapt/commandline_test.cc:105:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "--testing=yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:105:17: note: Shadow variable
+   char const * argv[] = { "test", "--testing=yes" };
+                ^
+test/libapt/commandline_test.cc:113:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "--testing=", "yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:113:17: note: Shadow variable
+   char const * argv[] = { "test", "--testing=", "yes" };
+                ^
+test/libapt/commandline_test.cc:122:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-o", "test::worked=yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:122:17: note: Shadow variable
+   char const * argv[] = { "test", "-o", "test::worked=yes" };
+                ^
+test/libapt/commandline_test.cc:129:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-o", "test::worked=" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:129:17: note: Shadow variable
+   char const * argv[] = { "test", "-o", "test::worked=" };
+                ^
+test/libapt/commandline_test.cc:136:17: style: Local variable 'argv' shadows outer variable [shadowVariable]
+   char const * argv[] = { "test", "-o", "test::worked=", "yes" };
+                ^
+test/libapt/commandline_test.cc:53:17: note: Shadowed declaration
+   char const * argv[] = { "test", "--zero", "-t" };
+                ^
+test/libapt/commandline_test.cc:136:17: note: Shadow variable
+   char const * argv[] = { "test", "-o", "test::worked=", "yes" };
+                ^
+apt-pkg/contrib/crc-16.cc:71:0: style: The function 'AddCRC16' is never used. [unusedFunction]
+
+^
+apt-pkg/deb/debindexfile.cc:398:0: style: The function 'CreateSrcPkgParser' is never used. [unusedFunction]
+
+^
+apt-pkg/contrib/fileutl.cc:1195:0: style: The function 'InternalStream' is never used. [unusedFunction]
+
+^
+apt-pkg/indexcopy.cc:632:0: style: The function 'RunGPGV' is never used. [unusedFunction]
+
+^
+apt-pkg/contrib/strutl.cc:1064:0: style: The function 'StrToTime' is never used. [unusedFunction]
+
+^
+apt-pkg/tagfile.cc:1081:0: style: The function 'TFRewrite' is never used. [unusedFunction]
+
+^
+apt-pkg/contrib/error.cc:56:0: style: The function '_GetErrorObj' is never used. [unusedFunction]
+
+^
+apt-pkg/pkgcachegen.cc:1811:0: style: The function 'pkgMakeOnlyStatusCache' is never used. [unusedFunction]
+
+^
+apt-pkg/pkgcachegen.cc:1646:0: style: The function 'pkgMakeStatusCache' is never used. [unusedFunction]
+
+^
+apt-pkg/contrib/strutl.cc:1451:0: style: The function 'safe_snprintf' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+

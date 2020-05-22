@@ -1,0 +1,130 @@
+Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining apt-pkg/acquire.cc
+Examining apt-pkg/acquire-item.cc
+Examining apt-pkg/acquire-method.cc
+Examining apt-pkg/acquire-worker.cc
+Examining apt-pkg/algorithms.cc
+Examining apt-pkg/aptconfiguration.cc
+Examining apt-pkg/cachefile.cc
+Examining apt-pkg/cachefilter.cc
+Examining apt-pkg/cacheset.cc
+Examining apt-pkg/cdrom.cc
+Examining apt-pkg/clean.cc
+Examining apt-pkg/depcache.cc
+Examining apt-pkg/edsp.cc
+Examining apt-pkg/indexcopy.cc
+Examining apt-pkg/indexfile.cc
+Examining apt-pkg/init.cc
+Examining apt-pkg/install-progress.cc
+Examining apt-pkg/metaindex.cc
+Examining apt-pkg/orderlist.cc
+Examining apt-pkg/packagemanager.cc
+Examining apt-pkg/pkgcache.cc
+Examining apt-pkg/pkgcachegen.cc
+Examining apt-pkg/pkgrecords.cc
+Examining apt-pkg/pkgsystem.cc
+Examining apt-pkg/policy.cc
+Examining apt-pkg/prettyprinters.cc
+Examining apt-pkg/sourcelist.cc
+Examining apt-pkg/srcrecords.cc
+Examining apt-pkg/statechanges.cc
+Examining apt-pkg/tagfile.cc
+Examining apt-pkg/tagfile-compat.cc
+Examining apt-pkg/update.cc
+Examining apt-pkg/upgrade.cc
+Examining apt-pkg/version.cc
+Examining apt-pkg/versionmatch.cc
+
+FINAL RESULTS:
+
+apt-pkg/acquire-item.cc:531:  [5] (race) readlink:
+  This accepts filename arguments; if an attacker can move those files or
+  change the link content, a race condition results. Also, it does not
+  terminate with ASCII NUL. (CWE-362, CWE-20). Reconsider approach.
+apt-pkg/acquire.cc:88:  [5] (race) chown:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchown( ) instead.
+apt-pkg/acquire.cc:113:  [5] (race) chown:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchown( ) instead.
+apt-pkg/acquire.cc:117:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+apt-pkg/depcache.cc:339:  [5] (race) chmod:
+  This accepts filename arguments; if an attacker can move those files, a
+  race condition results. (CWE-362). Use fchmod( ) instead.
+apt-pkg/acquire-item.cc:170:  [4] (shell) execvp:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-pkg/acquire-method.cc:429:  [4] (format) vfprintf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+apt-pkg/acquire-worker.cc:153:  [4] (shell) execv:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-pkg/edsp.cc:996:  [4] (shell) execv:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-pkg/edsp.cc:1001:  [4] (shell) execv:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+apt-pkg/pkgcachegen.cc:1719:  [4] (race) access:
+  This usually indicates a security flaw. If an attacker can change anything
+  along the path between the call to access() and the file's actual use
+  (e.g., by moving files), the attacker can exploit the race condition
+  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())
+  and try to open the file directly.
+apt-pkg/pkgcachegen.cc:1721:  [4] (race) access:
+  This usually indicates a security flaw. If an attacker can change anything
+  along the path between the call to access() and the file's actual use
+  (e.g., by moving files), the attacker can exploit the race condition
+  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())
+  and try to open the file directly.
+apt-pkg/acquire.cc:429:  [3] (random) random:
+  This function is not sufficiently random for security-related functions
+  such as key and nonce creation (CWE-327). Use a more secure technique for
+  acquiring random values.
+apt-pkg/aptconfiguration.cc:238:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-pkg/aptconfiguration.cc:238:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-pkg/aptconfiguration.cc:454:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-pkg/aptconfiguration.cc:454:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+apt-pkg/init.cc:218:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+
+ANALYSIS SUMMARY:
+
+Hits = 18
+Lines analyzed = 25838 in approximately 1.06 seconds (24456 lines/second)
+Physical Source Lines of Code (SLOC) = 19527
+Hits@level = [0]  76 [1]  38 [2]   6 [3]   6 [4]   7 [5]   5
+Hits@level+ = [0+] 138 [1+]  62 [2+]  24 [3+]  18 [4+]  12 [5+]   5
+Hits/KSLOC@level+ = [0+] 7.06714 [1+] 3.17509 [2+] 1.22907 [3+] 0.921801 [4+] 0.614534 [5+] 0.256056
+Minimum risk level = 3
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.
